@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnIMC.setOnClickListener(View.OnClickListener {
+            // variables
             val peso = edtPeso.text.toString().toDouble() / 2.2
 
             val altura = edtAltura.text.toString().toDouble() /100
@@ -23,27 +24,30 @@ class MainActivity : AppCompatActivity() {
 
             var diagnostico:String =""
 
+            //function
+
             if (imc < 17)
             {
-                diagnostico = "Esta muy bajo de peso"
+                diagnostico = "IMC : " + imc + "Esta muy bajo de peso"
             }
             else if (imc < 18.49)
             {
-                diagnostico = "Esta abajo del peso normal"
+                diagnostico = "IMC : " + imc + " Esta abajo del peso normal"
             }
             else if (imc < 24.99)
             {
-                diagnostico = "Tiene un peso normal"
+                diagnostico = "IMC : " + imc + "Tiene un peso normal"
             }
             else if (imc < 29.99)
             {
-                diagnostico = "Esta por encima del peso normal"
+                diagnostico = "IMC : " + imc + "Esta por encima del peso normal"
             }
             else
             {
-                diagnostico = "Tiene Obesidad "
+                diagnostico = "IMC : " + imc + "Tiene Obesidad "
             }
 
+           //Show a text
             Toast.makeText(this, diagnostico, Toast.LENGTH_LONG).show()
 
         })
